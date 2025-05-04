@@ -4,7 +4,13 @@
 using namespace std;
 
 int main(){
+    //Dados do NPC
+    primeironomes();
+    segundonomes();
+    paisorigem();
+    idade();
+    dataexpiracao();
 
-    nomes();
+
     return 0;
 }
