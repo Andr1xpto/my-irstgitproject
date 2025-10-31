@@ -1,4 +1,6 @@
 #include <iostream>
+#include "pedidos.h"
+#include "solucao.h"
 
 using namespace std;
 
@@ -43,7 +45,7 @@ int main(){
         system("clear");
     }
     if(escolha == 1){
-        
+        nomes();
     }
   }
 }
