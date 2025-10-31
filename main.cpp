@@ -2,9 +2,12 @@
 
 using namespace std;
 
-void introducao(){
+
+
+int main(){
+
   int escolha;
-  bool ativo = false;
+  bool ativo = true;
 
   while(ativo){
   cout << "-.-.-.-.-.-.-.-.PC BUILDING SIMULATOR-.-.-.-.-.-.-.-.\n\n";
@@ -33,11 +36,14 @@ void introducao(){
         cout << "Opção inválida, tente novamente!\n";
         break;
     }
+    if (escolha != 3) {
+        cout << "\nPrima ENTER para voltar ao menu...";
+        cin.ignore();
+        cin.get();
+        system("clear");
+    }
+    if(escolha == 1){
+        
+    }
   }
-
-}
-
-
-int main(){
-
 }
