@@ -1,7 +1,9 @@
+//Feito por: André Medeiros e Filipe Baptista
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+
 
 using namespace std;
 
