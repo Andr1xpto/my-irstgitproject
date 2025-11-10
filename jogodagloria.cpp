@@ -15,11 +15,11 @@ using namespace std;
 void mostrarTabuleiro(int pos1, int pos2) {
     for (int i = 1; i <= 30; i++) {
         if (i == pos1 && i == pos2) {
-            cout << "[1|2]";
+            cout << "[A|B]";
         } else if (i == pos1) {
-            cout << "[1]";
+            cout << "[A]";
         } else if (i == pos2) {
-            cout << "[2]";
+            cout << "[B]";
         } else if (i == 7 || i == 10 || i == 19 || i == 22 || i == 27) {
             cout << "[*]";
         } else {
@@ -72,12 +72,12 @@ int main() {
 
     const int NUM_JOGADORES = 2;
     int pos[NUM_JOGADORES] = {1, 1};
-    char simbolo[NUM_JOGADORES] = {'1', '2'};
+    char simbolo[NUM_JOGADORES] = {'A', 'B'};
     bool perdeVez[NUM_JOGADORES] = {false, false};
     bool jogaNovamente[NUM_JOGADORES] = {false, false};
     bool espera[NUM_JOGADORES] = {false, false};
 
-    int turno = 0; // começa com o jogador 1
+    int turno = 0; // começa com o jogador A
     bool fimDeJogo = false;
 
     cout << "-.-.-.-.-. JOGO DA GLÓRIA -.-.-.-.-." << endl;
