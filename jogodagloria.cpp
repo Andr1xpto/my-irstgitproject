@@ -11,15 +11,15 @@
 
 using namespace std;
 
-// Função para mostrar o tabuleiro
+// tabuleiro
 void mostrarTabuleiro(int pos1, int pos2) {
     for (int i = 1; i <= 30; i++) {
         if (i == pos1 && i == pos2) {
-            cout << "[J1|J2]";
+            cout << "[1|2]";
         } else if (i == pos1) {
-            cout << "[J1]";
+            cout << "[1]";
         } else if (i == pos2) {
-            cout << "[J2]";
+            cout << "[2]";
         } else if (i == 7 || i == 10 || i == 19 || i == 22 || i == 27) {
             cout << "[*]";
         } else {
@@ -34,27 +34,27 @@ void mostrarTabuleiro(int pos1, int pos2) {
     cout << endl;
 }
 
-// Verifica se o jogador caiu numa casa especial
+// verifica casa especial
 int verificarCasaEspecial(int posicao, bool &perdeVez, bool &jogaNovamente, bool &espera) {
     switch (posicao) {
-        case 5:
-            cout << "Casa 5: Perde a vez de jogar!" << endl;
+        case 7:
+            cout << "Casa 7: Perde a vez de jogar!" << endl;
             perdeVez = true;
             break;
         case 10:
             cout << "Casa 10: Retorna 3 casas!" << endl;
             posicao -= 3;
             break;
-        case 15:
-            cout << "Casa 15: Avança 3 casas!" << endl;
+        case 19:
+            cout << "Casa 19: Avança 3 casas!" << endl;
             posicao += 3;
             break;
-        case 20:
-            cout << "Casa 20: Joga novamente!" << endl;
+        case 22:
+            cout << "Casa 22: Joga novamente!" << endl;
             jogaNovamente = true;
             break;
-        case 25:
-            cout << "Casa 25: Espera pela passagem dos outros jogadores!" << endl;
+        case 27:
+            cout << "Casa 27: Espera pela passagem dos outros jogadores!" << endl;
             espera = true;
             break;
         default:
@@ -72,12 +72,12 @@ int main() {
 
     const int NUM_JOGADORES = 2;
     int pos[NUM_JOGADORES] = {1, 1};
-    char simbolo[NUM_JOGADORES] = {'J1', 'J2'};
+    char simbolo[NUM_JOGADORES] = {'1', '2'};
     bool perdeVez[NUM_JOGADORES] = {false, false};
     bool jogaNovamente[NUM_JOGADORES] = {false, false};
     bool espera[NUM_JOGADORES] = {false, false};
 
-    int turno = 0; // começa com o jogador A
+    int turno = 0; // começa com o jogador 1
     bool fimDeJogo = false;
 
     cout << "-.-.-.-.-. JOGO DA GLÓRIA -.-.-.-.-." << endl;
@@ -113,7 +113,7 @@ int main() {
             }
         }
 
-        // Se perdeu a vez
+        // perda da vez
         if (perdeVez[turno]) {
             cout << "O jogador " << simbolo[turno] << " perdeu a vez!\n";
             perdeVez[turno] = false;
@@ -123,7 +123,7 @@ int main() {
             continue;
         }
 
-        // Jogada normal
+        // joga normal
         cout << "Pressione ENTER para rolar o dado...";
         cin.ignore();
 
@@ -143,7 +143,7 @@ int main() {
             break;
         }
 
-        // Se tiver direito a jogar novamente, mantém o turno
+        // joga novamente
         if (jogaNovamente[turno]) {
             cout << "O jogador " << simbolo[turno] << " joga novamente!\n";
             jogaNovamente[turno] = false;
@@ -152,7 +152,7 @@ int main() {
             continue;
         }
 
-        // Passa o turno para o próximo jogador
+        // passsa turno
         turno = (turno + 1) % NUM_JOGADORES;
         cout << "Pressione ENTER para continuar...";
         cin.ignore();
